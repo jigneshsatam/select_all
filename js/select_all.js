@@ -1,5 +1,5 @@
 (function ( $ ) {
-  $.fn.select_all_plugin = function() {
+  $.fn.select_all = function() {
     $(this).addClass("select_all");
     $(".select_all").change(function(){
       $(".selectable").prop('checked', $(this).prop("checked"));
