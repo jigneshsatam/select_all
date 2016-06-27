@@ -161,6 +161,13 @@ a.button span {
 #view-on-github span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
+#demo span {
+  background: transparent url(../images/play-button_318-42541.jpg) 12px 50% no-repeat;
+  background-size: 23px;
+}
+.width600{
+  width: 600px !important;
+}
 #view-on-github {
   margin-right: 0;
 }
