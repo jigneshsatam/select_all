@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/JigneshSatam/checkbox_select_all/master/js/select_all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css.scss">
+  </head>
+  <body>
+
+    <header class="header">
+
+    </header>
+
+    <section class="content glow">
+      <ul class="list">
+        <li class="list__item">
+          <label class="label--checkbox">
+              <input type="checkbox" id="checkAll" class="checkbox">
+                Select All Items
+          </label>
+        </li>
+
+        <hr>
+
+        <li class="list__item">
+          <label class="label--checkbox">
+              <input type="checkbox" class="checkbox selectable" >
+                Item 1
+          </label>
+        </li>
+        <li class="list__item">
+          <label class="label--checkbox">
+              <input type="checkbox" class="checkbox selectable">
+                Item 2
+          </label>
+        </li>
+        <li class="list__item">
+          <label class="label--checkbox">
+              <input type="checkbox" class="checkbox selectable" checked>
+                Item 3
+          </label>
+        </li>
+        <li class="list__item">
+          <label class="label--checkbox">
+              <input type="checkbox" class="checkbox selectable" checked>
+                Item 4
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <p class="title">
+        How To Use
+      </p>
+      <p class="usage">
+        1/ Call funtion select_all() on parent check-box i.e. "Select All Items"
+        <br>
+        <br>
+        <br>
+        2/ Add class='selectable' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      $("#checkAll").select_all();
+    </script>
+
+  </body>
+</html>
