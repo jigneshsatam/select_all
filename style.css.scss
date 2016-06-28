@@ -14,7 +14,14 @@ body {
   height: 8rem;
   background: #009688;
 }
-
+.header_title{
+  color: #fff;
+  padding-top: 23px;
+  font-weight: bold;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 22px;
+}
 .container{
   margin: 0 auto;
   width: 50%;
@@ -25,8 +32,9 @@ body {
   font-family: jennaSue;
 }
 .usage{
-  font-size: 20px;
+  font-size: 18px;
   font-family: helvetica;
+  color: #666;
 }
 @-webkit-keyframes glow{
   0% {
