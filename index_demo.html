@@ -7,56 +7,57 @@
   <body>
     <section class="ex1">
       <header class="header">
-        <p class="header_title">Simple Use</p>
+        <p class="header_title">Basic Usage</p>
       </header>
+      <div class="wrapper">
+        <div class="content glow content1">
+          <ul class="list">
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" id="simpleCheckAll" class="checkbox">
+                    All Items
+              </label>
+            </li>
 
-      <div class="content glow">
-        <ul class="list">
-          <li class="list__item">
-            <label class="label--checkbox">
-                <input type="checkbox" id="simpleCheckAll" class="checkbox">
-                  All Items
-            </label>
-          </li>
+            <hr>
 
-          <hr>
-
-          <li class="list__item">
-            <label class="label--checkbox">
-                <input type="checkbox" class="checkbox selectable" >
-                  Item 1
-            </label>
-          </li>
-          <li class="list__item">
-            <label class="label--checkbox">
-                <input type="checkbox" class="checkbox selectable">
-                  Item 2
-            </label>
-          </li>
-          <li class="list__item">
-            <label class="label--checkbox">
-                <input type="checkbox" class="checkbox selectable" checked>
-                  Item 3
-            </label>
-          </li>
-          <li class="list__item">
-            <label class="label--checkbox">
-                <input type="checkbox" class="checkbox selectable" checked>
-                  Item 4
-            </label>
-          </li>
-        </ul>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" >
+                    Item 1
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable">
+                    Item 2
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 3
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 4
+              </label>
+            </li>
+          </ul>
+        </div>
       </div>
+      <p class="title">
+        How To Use
+      </p>
       <div class="container">
-        <p class="title">
-          How To Use
-        </p>
         <p class="usage">
-          Call function <b>select_all()</b> on parent check-box i.e. "All Items"
+          Call function: <br> <b>select_all()</b> <br> on parent check-box i.e. "All Items"
           <br>
           <br>
           <br>
-          Add class='selectable' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4
+          Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4
         </p>
       </div>
     </section>
@@ -66,8 +67,8 @@
       <header class="header">
         <p class="header_title">More than One Select All in a Page</p>
       </header>
-      <div class="content_container">
-        <div class="content glow" style="margin-left: 2em; float: left;">
+      <div class="wrapper">
+        <div class="content glow content2">
           <ul class="list">
             <li class="list__item">
               <label class="label--checkbox">
@@ -104,7 +105,7 @@
             </li>
           </ul>
         </div>
-        <div class="content glow" style="margin-left: 2em; float: left;">
+        <div class="content glow content2">
           <ul class="list">
             <li class="list__item">
               <label class="label--checkbox">
@@ -142,33 +143,34 @@
           </ul>
         </div>
       </div>
+      <p class="title">
+        How To Use
+      </p>
       <div class="container">
-        <p class="title">
-          How To Use
-        </p>
-        <nav style="float: left; width: 40%">
-          <p class="usage">
+        <div class="usage usage2">
+          <p>
             <u> To Select Fruits</u>
             <br>
-            Call function <b>select_all({class: 'fruits'})</b> on parent check-box i.e. "All Fruits"
+            Call function: <br><b>select_all({class: 'fruits'})</b><br> on parent check-box i.e. "All Fruits"
             <br>
             <br>
             <br>
-            Add class='selectable' on children-checkboxes/sub-checkboxes i.e. Mango, Apple, Banana, Orange
+            Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Mango, Apple, Banana, Orange
           </p>
-        </nav>
-        <nav style="float: right; width: 40%">
-          <p class="usage">
+        </div>
+        <div class="usage usage2">
+          <p>
             <u> To Select Animals</u>
             <br>
-            Call function
-            <b>select_all({class: 'animals'})</b> on parent check-box i.e. "All Animals"
+            Call function:
+            <br><b>select_all({class: 'animals'})</b><br>
+            on parent check-box i.e. "All Animals"
             <br>
             <br>
             <br>
-            Add class='selectable' on children-checkboxes/sub-checkboxes i.e. Lion, Elephant, Tiger, Bear
+            Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Lion, Elephant, Tiger, Bear
           </p>
-        </nav>
+        </div>
         <div style="clear: both"></div>
       </div>
     </section>
