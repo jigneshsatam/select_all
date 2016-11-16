@@ -5,8 +5,10 @@ if (typeof jQuery === "undefined") {
 
 (function ( $ ) {
   $.fn.select_all = function(options) {
+    var selectables;
     var settings = $.extend({
-      class: "no_class"
+      class: "no_class",
+      infinite_select: false
     }, options );
 
     var select_all = $(this);
@@ -15,7 +17,7 @@ if (typeof jQuery === "undefined") {
     select_all.addClass("select_all "+settings.class);
 
     while( !find_in.is("body") ){
-      var selectables = find_in.find(":checkbox.selectable");
+      selectables = find_in.find(":checkbox.selectable");
       if (selectables.length > 0){
         selectables.addClass(settings.class);
         find_in = $("body");
@@ -34,6 +36,16 @@ if (typeof jQuery === "undefined") {
       else
         $(".select_all."+settings.class).prop('checked', false);
     });
+    if(settings.infinite_select){
+      debugger
+      $(select_all).data("total_child_count", selectables.length);
+      $(document).ajaxComplete(function( event, xhr, settings ){
+        $("[data='total_child_count']").each(function(){
+          $(this).data("total_child_count")
+        });
+        console.log("dude");
+      })
+    }
   }
   return $(this);
 }( jQuery ));

@@ -70,7 +70,6 @@
       </div>
     </section>
 
-
     <section class="ex2">
       <header class="header">
         <p class="header_title">More than One Select All in a Page</p>
@@ -183,11 +182,86 @@
       </div>
     </section>
 
+    <section class="ex3">
+      <header class="header">
+        <p class="header_title">Infinite Scroll with Select All</p>
+      </header>
+      <div class="wrapper big_wrapper">
+        <div class="content glow content1">
+          <ul class="list">
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" id="infiniteCheckAll" class="checkbox">
+                    All Items
+              </label>
+            </li>
+            <hr>
+            <div class="overflow">
+              <div class="inner">
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable" >
+                        Item 1
+                  </label>
+                </li>
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable">
+                        Item 2
+                  </label>
+                </li>
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable" checked>
+                        Item 3
+                  </label>
+                </li>
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable" checked>
+                        Item 4
+                  </label>
+                </li>
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable" checked>
+                        Item 5
+                  </label>
+                </li>
+                <li class="list__item">
+                  <label class="label--checkbox">
+                      <input type="checkbox" class="checkbox selectable" checked>
+                        Item 6
+                  </label>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <script type="text/javascript">
       $(".ex1").find("#simpleCheckAll").select_all();
       $(".ex2").find("#checkAllFruits").select_all({class: "fruits"});
       $(".ex2").find("#checkAllAnimals").select_all({class: "animals"});
+      $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_select: true});
     </script>
-
+    <script type="text/javascript">
+      $('.overflow').scroll(function(){
+        var top = $('.overflow').scrollTop();
+        var diff = $(".inner").height() - $('.overflow').height();
+        if(top >= diff){
+          $.ajax({
+            url: 'page1.json',
+            dataType: 'json',
+            success: function(response){
+              var structure = $.parseHTML(response["new_items"]);
+              $(".inner").append(structure);
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
