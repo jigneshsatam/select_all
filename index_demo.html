@@ -190,8 +190,8 @@
         <div class="content glow content1">
           <ul class="list">
             <li class="list__item">
-              <label class="label--checkbox">
-                  <input type="checkbox" id="infiniteCheckAll" class="checkbox">
+              <label class="label--checkbox" for="infiniteCheckAll">
+                <input type="checkbox" id="infiniteCheckAll" class="checkbox">
                     All Items
               </label>
             </li>
@@ -239,6 +239,36 @@
           </ul>
         </div>
       </div>
+      <p class="title">
+        How To Use
+      </p>
+      <div class="container">
+        <div class="usage">
+          <p>
+            <u> To <b>Auto Select 'All Items'</b> which are going to get added from <b>Infinite Scroll</b></u>
+            <br>
+            Call function:
+            <br><b>select_all({infinite_scroll_select: true})</b><br>
+            on parent check-box i.e. "All Items"
+            <br>
+            <br>
+            <br>
+            Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4,..
+            <br>
+            All the new checkboxes which are going to get added by infinite scroll should have class <b>selectable</b>
+          </p>
+        </div>
+        <div  style="background-color:white;">
+          <code>
+            <p>HTML Code:</p>
+              &lt;label&gt; &lt;input type="checkbox" id="infiniteCheckAll"&gt;  All Items
+              &lt;/label&gt;
+            </br>
+            <p>Javascript Code:</p>
+              $("input#infiniteCheckAll").select_all({infinite_scroll_select: true}
+          </code>
+        </div>
+      </div>
     </section>
 
     <script type="text/javascript">
@@ -248,6 +278,7 @@
       $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_scroll_select: true});
     </script>
     <script type="text/javascript">
+      var infinite_item_count = 6;
       $('.overflow').scroll(function(){
         var top = $('.overflow').scrollTop();
         var diff = $(".inner").height() - $('.overflow').height();
@@ -257,6 +288,9 @@
             dataType: 'json',
             success: function(response){
               var structure = $.parseHTML(response["new_items"]);
+              $(structure).each(function(){
+                $(this).find("label").append("Item "+ ++infinite_item_count);
+              });
               $(".inner").append(structure);
             }
           });
