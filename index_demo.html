@@ -258,16 +258,20 @@
             All the new checkboxes which are going to get added by infinite scroll should have class <b>selectable</b>
           </p>
         </div>
-        <div  style="background-color:white;">
+        <pre>
           <code>
             <p>HTML Code:</p>
-              &lt;label&gt; &lt;input type="checkbox" id="infiniteCheckAll"&gt;  All Items
-              &lt;/label&gt;
+            <div class="left_align">
+            <span class="tag">&lt;label&gt;</span>
+              &nbsp;<span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span> <span class="tag">&lt;/input&gt;</span>
+              &nbsp;  All Items
+            <span class="tag">&lt;/label&gt;</span>
+            </div>
             </br>
             <p>Javascript Code:</p>
               $("input#infiniteCheckAll").select_all({infinite_scroll_select: true}
           </code>
-        </div>
+        </pre>
       </div>
     </section>
 
