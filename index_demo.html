@@ -67,6 +67,22 @@
           <br>
           Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4
         </p>
+        <pre>
+          <code>
+            <b>HTML Code:</b>
+            <div  class="left_align">
+              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAll"</span> <span class="tag">/&gt;</span>
+
+              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAll"</span> <span class="tag">&gt;</span>
+                &nbsp;  All Items
+              <span class="tag">&lt;/label&gt;</span>
+            </div>
+            <b>Javascript Code:</b>
+            <div  class="left_align">
+              <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAll"</span><span>).</span><span class="attr">select_all</span><span>();
+            </div>
+          </code>
+        </pre>
       </div>
     </section>
 
@@ -179,6 +195,32 @@
           </p>
         </div>
         <div style="clear: both"></div>
+        <pre>
+          <code>
+            <b>HTML Code:</b>
+            <div  class="left_align">
+              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllFruits"</span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllFruits"</span> <span class="tag">&gt;</span>
+                &nbsp;  All Fruits
+              <span class="tag">&lt;/label&gt;</span>
+
+              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllAnimals"</span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllAnimals"</span> <span class="tag">&gt;</span>
+                &nbsp;  All Animals
+              <span class="tag">&lt;/label&gt;</span>
+            </div>
+            <b>Javascript Code:</b>
+            <div  class="left_align">
+              <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllFruits"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+              &nbsp;<span class="tag">class</span><span>:</span> <span class="text">"fruits"</span>
+              <span>});</span>
+
+              <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllAnimals"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+              &nbsp;<span class="tag">class</span><span>:</span> <span class="text">"animals"</span>
+              <span>});</span>
+            </div>
+          </code>
+        </pre>
       </div>
     </section>
 
@@ -260,16 +302,20 @@
         </div>
         <pre>
           <code>
-            <p>HTML Code:</p>
-            <div class="left_align">
-            <span class="tag">&lt;label&gt;</span>
-              &nbsp;<span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span> <span class="tag">&lt;/input&gt;</span>
-              &nbsp;  All Items
-            <span class="tag">&lt;/label&gt;</span>
+            <b>HTML Code:</b>
+            <div  class="left_align">
+              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">/&gt;</span>
+
+              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span>
+                &nbsp;  All Items
+              <span class="tag">&lt;/label&gt;</span>
             </div>
-            </br>
-            <p>Javascript Code:</p>
-              $("input#infiniteCheckAll").select_all({infinite_scroll_select: true}
+            <b>Javascript Code:</b>
+            <div  class="left_align">
+              <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+              &nbsp;<span class="tag">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
+              <span>});</span>
+            </div>
           </code>
         </pre>
       </div>
