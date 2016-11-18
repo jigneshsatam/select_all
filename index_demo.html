@@ -212,11 +212,11 @@
             <b>Javascript Code:</b>
             <div  class="left_align">
               <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllFruits"</span><span>).</span><span class="attr">select_all</span><span>({</span>
-              &nbsp;<span class="tag">class</span><span>:</span> <span class="text">"fruits"</span>
+              &nbsp;<span class="parameter">class</span><span>:</span> <span class="text">"fruits"</span>
               <span>});</span>
 
               <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllAnimals"</span><span>).</span><span class="attr">select_all</span><span>({</span>
-              &nbsp;<span class="tag">class</span><span>:</span> <span class="text">"animals"</span>
+              &nbsp;<span class="parameter">class</span><span>:</span> <span class="text">"animals"</span>
               <span>});</span>
             </div>
           </code>
@@ -313,7 +313,100 @@
             <b>Javascript Code:</b>
             <div  class="left_align">
               <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
-              &nbsp;<span class="tag">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
+              &nbsp;<span class="parameter">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
+              <span>});</span>
+            </div>
+          </code>
+        </pre>
+      </div>
+    </section>
+
+    <section class="ex4">
+      <header class="header">
+        <p class="header_title">Selection Count</p>
+      </header>
+      <div class="wrapper">
+        <div class="content glow content3">
+          <ul class="list">
+            <li class="list__item">
+              <label class="label--checkbox" id="showCount">
+                <input type="checkbox" id="selectionCount" class="checkbox">
+                    All Items
+              </label>
+            </li>
+            <hr>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" >
+                    Item 1
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable">
+                    Item 2
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 3
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 4
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 5
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Item 6
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="title">
+        How To Use
+      </p>
+      <div class="container">
+        <div class="usage">
+          <p>
+            <u> To <b>Auto Select 'All Items'</b> which are going to get added from <b>Infinite Scroll</b></u>
+            <br>
+            Call function:
+            <br><b>select_all({infinite_scroll_select: true})</b><br>
+            on parent check-box i.e. "All Items"
+            <br>
+            <br>
+            <br>
+            Add class='<b>selectable</b>' on children-checkboxes/sub-checkboxes i.e. Item 1, Item 2, Item 3, Item 4,..
+            <br>
+            All the new checkboxes which are going to get added by infinite scroll should have class <b>selectable</b>
+          </p>
+        </div>
+        <pre>
+          <code>
+            <b>HTML Code:</b>
+            <div  class="left_align">
+              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">/&gt;</span>
+
+              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span>
+                &nbsp;  All Items
+              <span class="tag">&lt;/label&gt;</span>
+            </div>
+            <b>Javascript Code:</b>
+            <div  class="left_align">
+              <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+              &nbsp;<span class="parameter">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
               <span>});</span>
             </div>
           </code>
@@ -326,6 +419,7 @@
       $(".ex2").find("#checkAllFruits").select_all({class: "fruits"});
       $(".ex2").find("#checkAllAnimals").select_all({class: "animals"});
       $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_scroll_select: true});
+      $(".ex4").find("#selectionCount").select_all({class: "selectionCount", show_count: "unselected", attach_count_to: "#showCount"});
     </script>
     <script type="text/javascript">
       var infinite_item_count = 6;

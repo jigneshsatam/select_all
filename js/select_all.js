@@ -8,7 +8,9 @@ if (typeof jQuery === "undefined") {
     var selectables;
     var settings = $.extend({
       class: "no_class",
-      infinite_scroll_select: false
+      infinite_scroll_select: false,
+      show_count: false,
+      attach_count_to: false
     }, options );
 
     var select_all = $(this);
@@ -23,7 +25,8 @@ if (typeof jQuery === "undefined") {
     $(".select_all[data-select_all_class='"+settings.class+"']").change(function(){
       $(".selectable."+settings.class).prop('checked', $(this).prop("checked"));
     });
-    initialise_selectables(selectables);
+
+    // infinite scroll select
     if(settings.infinite_scroll_select){
       $(select_all).attr("data-total_child_count", selectables.length);
       $(document).ajaxComplete(function( event, xhr, settings ){
@@ -41,7 +44,14 @@ if (typeof jQuery === "undefined") {
         });
       });
     }
-
+    // Selection count
+    if(settings.show_count !== false){
+      select_all.data("show_count", settings.show_count);
+      select_all.data("attach_count_to", settings.attach_count_to);
+      set_count(select_all, selectables.parent().find(":checked").length, selectables.length);
+    }
+    initialise_select_all(select_all);
+    initialise_selectables(selectables);
     function find_selectables(find_in) {
       var selectables, searched;
       while( !find_in.is("body") ){
@@ -56,13 +66,52 @@ if (typeof jQuery === "undefined") {
       }
       return selectables;
     }
+    function set_count(parent_select_all, selected_options_count, total_options_count){
+      switch(parent_select_all.data("show_count")){
+        case "selected":
+          count_result = "(Selected "+selected_options_count+")";
+          break;
+        case "selected_with_total":
+          count_result = "("+selected_options_count+"/"+total_options_count+")";
+          break;
+        case "unselected":
+          var unselected_count = total_options_count-selected_options_count
+          count_result = "(Unselected "+ unselected_count +")";
+          break;
+        default:
+          count_result = "(Selected "+selected_options_count+")";
+      }
+      var attach_count_to = $(parent_select_all.data("attach_count_to"));
+      if (attach_count_to.length == 0)
+        attach_count_to = parent_select_all.parent();
+      if ($("#select_all_count_id").length > 0)
+        $("span#select_all_count_id").text(count_result);
+      else
+        $("<span id='select_all_count_id'>"+count_result+"</span>").appendTo(attach_count_to);
+    }
     function initialise_selectables(selectables){
       $(selectables).change(function(){
-        if ($(".selectable."+settings.class+":checked").length == $(".selectable."+settings.class).length)
-          $(".select_all[data-select_all_class='"+settings.class+"']").prop('checked', "checked");
+        var parent_select_all = $(".select_all[data-select_all_class='"+settings.class+"']");
+        var selected_options_count = $(".selectable."+settings.class+":checked").length;
+        var total_options_count = $(".selectable."+settings.class).length;
+        if (selected_options_count == total_options_count)
+          parent_select_all.prop('checked', "checked");
         else
-          $(".select_all[data-select_all_class='"+settings.class+"']").prop('checked', false);
-      });  
+          parent_select_all.prop('checked', false);
+
+        if(parent_select_all.data("show_count").length > 0)
+          set_count(parent_select_all, selected_options_count, total_options_count);
+      });
+    }
+    function initialise_select_all(select_all){
+      var selectables = $(".selectable."+settings.class);
+      select_all.change(function(){
+        var isChecked = $(this).prop("checked");
+        selectables.prop('checked', isChecked);
+        if(select_all.data("show_count").length > 0)
+          var selected_options_count = isChecked ? selectables.length : 0;
+          set_count(select_all, selected_options_count, selectables.length);
+      });
     }
     return $(this);
   }
