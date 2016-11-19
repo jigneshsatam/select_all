@@ -97,6 +97,10 @@ section{
   margin: 0 0.5em;
   width: calc(50% - 1em);
 }
+.content3 {
+  margin: 0 0.5em;
+  width: calc(33.33% - 1em);
+}
 
 @for $i from 1 through 4 {
   .content:first-child:nth-last-child(#{$i}),
@@ -220,7 +224,9 @@ ul{
 .big_wrapper{
   width: 28%;
 }
-
+.very_big_wrapper{
+  width: 70%;
+}
 .overflow{
   padding-top: 0.2em;
   height: 140px;

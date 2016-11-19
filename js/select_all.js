@@ -10,13 +10,18 @@ if (typeof jQuery === "undefined") {
       class: "no_class",
       infinite_scroll_select: false,
       show_count: false,
-      attach_count_to: false
+      attach_count_to: false,
+      uniq_id: Math.random()
     }, options );
 
     var select_all = $(this);
     var find_in = select_all;
 
-    select_all.addClass("select_all").attr("data-select_all_class", settings.class);
+    // initializing parent select_all
+    select_all.addClass("select_all").attr("data-select_all_class", settings.class).attr("data-select_all_uid", settings.uniq_id);
+    select_all.data("show_count", settings.show_count);
+    select_all.data("attach_count_to", settings.attach_count_to);
+
     selectables = find_selectables(find_in);
     if (selectables.length > 0){
       selectables.addClass(settings.class);
@@ -46,8 +51,6 @@ if (typeof jQuery === "undefined") {
     }
     // Selection count
     if(settings.show_count !== false){
-      select_all.data("show_count", settings.show_count);
-      select_all.data("attach_count_to", settings.attach_count_to);
       set_count(select_all, selectables.parent().find(":checked").length, selectables.length);
     }
     initialise_select_all(select_all);
@@ -84,10 +87,10 @@ if (typeof jQuery === "undefined") {
       var attach_count_to = $(parent_select_all.data("attach_count_to"));
       if (attach_count_to.length == 0)
         attach_count_to = parent_select_all.parent();
-      if ($("#select_all_count_id").length > 0)
-        $("span#select_all_count_id").text(count_result);
+      if ($("span#select_all_count_id[data-select_all_uid='"+parent_select_all.data("select_all_uid")+"']").length > 0)
+        $("span#select_all_count_id[data-select_all_uid='"+parent_select_all.data("select_all_uid")+"']").text(count_result);
       else
-        $("<span id='select_all_count_id'>"+count_result+"</span>").appendTo(attach_count_to);
+        $("<span id='select_all_count_id' data-select_all_uid="+parent_select_all.data("select_all_uid") +">"+count_result+"</span>").appendTo(attach_count_to);
     }
     function initialise_selectables(selectables){
       $(selectables).change(function(){
@@ -98,9 +101,9 @@ if (typeof jQuery === "undefined") {
           parent_select_all.prop('checked', "checked");
         else
           parent_select_all.prop('checked', false);
-
-        if(parent_select_all.data("show_count").length > 0)
+        if(parent_select_all.data("show_count").length > 0){
           set_count(parent_select_all, selected_options_count, total_options_count);
+        }
       });
     }
     function initialise_select_all(select_all){
@@ -108,9 +111,10 @@ if (typeof jQuery === "undefined") {
       select_all.change(function(){
         var isChecked = $(this).prop("checked");
         selectables.prop('checked', isChecked);
-        if(select_all.data("show_count").length > 0)
+        if(select_all.data("show_count").length > 0){
           var selected_options_count = isChecked ? selectables.length : 0;
           set_count(select_all, selected_options_count, selectables.length);
+        }
       });
     }
     return $(this);

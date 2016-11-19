@@ -1,7 +1,7 @@
 <html>
   <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/select_all.js"></script>
+    <script type="text/javascript" src="js/select_all.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -325,50 +325,144 @@
       <header class="header">
         <p class="header_title">Selection Count</p>
       </header>
-      <div class="wrapper">
+      <div class="wrapper very_big_wrapper">
         <div class="content glow content3">
           <ul class="list">
             <li class="list__item">
-              <label class="label--checkbox" id="showCount">
-                <input type="checkbox" id="selectionCount" class="checkbox">
-                    All Items
+              <label class="label--checkbox" id="showCarCount">
+                <input type="checkbox" id="selectAllCars" class="checkbox">
+                    All Cars
               </label>
             </li>
             <hr>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" >
-                    Item 1
+                    Aston Martin
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable">
-                    Item 2
+                    Bentley
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Item 3
+                    Audi
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Item 4
+                    BMW
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Item 5
+                    Mercedes
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Item 6
+                    Ferrari
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="content glow content3">
+          <ul class="list">
+            <li class="list__item">
+              <label class="label--checkbox" id="showDaysCount">
+                <input type="checkbox" id="selectAllDays" class="checkbox">
+                    All Days
+              </label>
+            </li>
+            <hr>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" >
+                    Sunday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable">
+                    Monday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Tuesday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Wednesday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Thursday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Friday
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Saturday
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="content glow content3">
+          <ul class="list">
+            <li class="list__item">
+              <label class="label--checkbox" id="showLanguageCount">
+                <input type="checkbox" id="selectAllLanguages" class="checkbox">
+                    All Languages
+              </label>
+            </li>
+            <hr>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" >
+                    JAVA
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable">
+                    C++
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Ruby
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Python
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
+                    Go
               </label>
             </li>
           </ul>
@@ -419,7 +513,9 @@
       $(".ex2").find("#checkAllFruits").select_all({class: "fruits"});
       $(".ex2").find("#checkAllAnimals").select_all({class: "animals"});
       $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_scroll_select: true});
-      $(".ex4").find("#selectionCount").select_all({class: "selectionCount", show_count: "unselected", attach_count_to: "#showCount"});
+      $(".ex4").find("#selectAllCars").select_all({class: "cars", show_count: "selected", attach_count_to: "#showCarCount"});
+      $(".ex4").find("#selectAllLanguages").select_all({class: "languages", show_count: "selected_with_total", attach_count_to: "#showLanguageCount"});
+      $(".ex4").find("#selectAllDays").select_all({class: "days", show_count: "unselected", attach_count_to: "#showDaysCount"});
     </script>
     <script type="text/javascript">
       var infinite_item_count = 6;
