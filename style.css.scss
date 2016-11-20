@@ -4,10 +4,14 @@
 }
 
 body {
-  font-size: 16px;
   margin: 0px;
   padding: 0px;
   background: #eeeeee;
+  font-size: 1.1em;
+  font-family: helvetica;
+  color: #666;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 section{
   margin-bottom: 2em;
@@ -36,7 +40,7 @@ section{
   font-family: jennaSue;
 }
 .usage{
-  font-size: 18px;
+  font-size: 1.1em;
   font-family: helvetica;
   color: #666;
 }
@@ -225,7 +229,7 @@ ul{
   width: 28%;
 }
 .very_big_wrapper{
-  width: 70%;
+  width: 75%;
 }
 .overflow{
   padding-top: 0.2em;
@@ -242,6 +246,7 @@ pre{
   white-space: pre-line;
   word-wrap: normal;
   color: #333;
+  text-align: center;
 }
 .tag{
   color: #2f6f9f;
@@ -255,9 +260,27 @@ pre{
 .left_align{
   text-align: left;
 }
+.center_align{
+  text-align: center;
+}
 .text{
   color: #409b1c;
 }
 .parameter{
   color: #a151d2;
+}
+.row{
+  width: 100%;
+  padding: 2em 0;
+}
+.row:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.col{
+  width: 49%;
+  padding:0 0.5em;
+  box-sizing: border-box;
+  float: left;
 }

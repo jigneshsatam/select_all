@@ -1,7 +1,7 @@
 <html>
   <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/select_all.min.js"></script>
+    <script type="text/javascript" src="js/select_all.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -12,7 +12,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="style.css.scss">
   </head>
-  <body>
+  <body style="overflow-x: hidden;">
     <section class="ex1">
       <header class="header">
         <p class="header_title">Basic Usage</p>
@@ -376,52 +376,46 @@
         <div class="content glow content3">
           <ul class="list">
             <li class="list__item">
-              <label class="label--checkbox" id="showDaysCount">
-                <input type="checkbox" id="selectAllDays" class="checkbox">
-                    All Days
+              <label class="label--checkbox" id="showColorsCount">
+                <input type="checkbox" id="selectAllColors" class="checkbox">
+                    All Color
               </label>
             </li>
             <hr>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" >
-                    Sunday
+                    Blue
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable">
-                    Monday
+                    Green
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Tuesday
+                    Yellow
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Wednesday
+                    Orange
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Thursday
+                    Red
               </label>
             </li>
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
-                    Friday
-              </label>
-            </li>
-            <li class="list__item">
-              <label class="label--checkbox">
-                  <input type="checkbox" class="checkbox selectable" checked>
-                    Saturday
+                    Violet
               </label>
             </li>
           </ul>
@@ -450,6 +444,12 @@
             <li class="list__item">
               <label class="label--checkbox">
                   <input type="checkbox" class="checkbox selectable" checked>
+                    JavaScript
+              </label>
+            </li>
+            <li class="list__item">
+              <label class="label--checkbox">
+                  <input type="checkbox" class="checkbox selectable" checked>
                     Ruby
               </label>
             </li>
@@ -468,11 +468,11 @@
           </ul>
         </div>
       </div>
-      <p class="title">
-        How To Use
-      </p>
-      <div class="container">
-        <div class="usage">
+      <div class="row">
+        <div class="col">
+          <p class="title">
+            How To Use
+          </p>
           <p>
             <u> To <b>Auto Select 'All Items'</b> which are going to get added from <b>Infinite Scroll</b></u>
             <br>
@@ -487,24 +487,26 @@
             All the new checkboxes which are going to get added by infinite scroll should have class <b>selectable</b>
           </p>
         </div>
-        <pre>
-          <code>
-            <b>HTML Code:</b>
-            <div  class="left_align">
-              <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">/&gt;</span>
+        <div class="col">
+          <pre>
+            <code>
+              <b>HTML Code:</b>
+              <div  class="left_align">
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">/&gt;</span>
 
-              <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span>
-                &nbsp;  All Items
-              <span class="tag">&lt;/label&gt;</span>
-            </div>
-            <b>Javascript Code:</b>
-            <div  class="left_align">
-              <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
-              &nbsp;<span class="parameter">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
-              <span>});</span>
-            </div>
-          </code>
-        </pre>
+                <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span>
+                  &nbsp;  All Items
+                <span class="tag">&lt;/label&gt;</span>
+              </div>
+              <b>Javascript Code:</b>
+              <div  class="left_align">
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
+                <span>});</span>
+              </div>
+            </code>
+          </pre>
+        </div>
       </div>
     </section>
 
@@ -515,7 +517,7 @@
       $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_scroll_select: true});
       $(".ex4").find("#selectAllCars").select_all({class: "cars", show_count: "selected", attach_count_to: "#showCarCount"});
       $(".ex4").find("#selectAllLanguages").select_all({class: "languages", show_count: "selected_with_total", attach_count_to: "#showLanguageCount"});
-      $(".ex4").find("#selectAllDays").select_all({class: "days", show_count: "unselected", attach_count_to: "#showDaysCount"});
+      $(".ex4").find("#selectAllColors").select_all({class: "Color", show_count: "unselected", attach_count_to: "#showColorsCount"});
     </script>
     <script type="text/javascript">
       var infinite_item_count = 6;
