@@ -280,8 +280,18 @@ pre{
   clear: both;
 }
 .col{
-  width: 49%;
+  width: 50%;
   padding:0 0.5em;
   box-sizing: border-box;
   float: left;
+}
+.explantion_div{
+  margin: 1em 0px 1em;
+  background-color: #ccc;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+.explantion_div .title{
+  font-size: 1.1em;
+  font-family: helvetica;
 }
