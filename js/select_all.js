@@ -71,13 +71,13 @@ if (typeof jQuery === "undefined") {
     }
     function set_count(parent_select_all, selected_options_count, total_options_count){
       switch(parent_select_all.data("show_count")){
-        case "selected":
+        case "checked":
           count_result = "(Selected "+selected_options_count+")";
           break;
-        case "selected_with_total":
+        case "checked_with_total":
           count_result = "("+selected_options_count+"/"+total_options_count+")";
           break;
-        case "unselected":
+        case "unchecked":
           var unselected_count = total_options_count-selected_options_count
           count_result = "(Unselected "+ unselected_count +")";
           break;

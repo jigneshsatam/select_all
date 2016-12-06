@@ -2,14 +2,14 @@
   font-family: jennaSue;
   src: url("JennaSue.ttf");
 }
-
 body {
   margin: 0px;
   padding: 0px;
   background: #eeeeee;
   font-size: 1.1em;
   font-family: helvetica;
-  color: #666; 
+  color: #666;
+  word-wrap: break-word;
 }
 h1, h2, h3, h4, h5, h6{
   color: rgba(255, 255, 255, 0.9);
@@ -31,6 +31,14 @@ main{
 section{
   margin-bottom: 2em;
 }
+a{
+  color: #666;
+  text-decoration: none;
+}
+a:hover{
+  color: #333;
+  cursor: pointer;
+}
 .header {
   height: 7.5rem;
   /*background: #009688;*/
@@ -47,8 +55,11 @@ section{
 
 .container{
   margin: 0 auto;
-  width: 50%;
+  width: 75%;
   text-align: center;
+}
+.big_container{
+  width: 99%;
 }
 .title {
   text-align: center;
@@ -61,11 +72,17 @@ section{
   color: #666;
 }
 .usage2{
-  text-align: left;
   float: left;
   box-sizing: border-box;
   width: calc(50% - 0.5em);
   margin-right: 0.5em;
+}
+.usage3{
+  float: left;
+  box-sizing: border-box;
+  width: calc(33.33% - 0.5em);
+  margin-right: 0.5em;
+  font-size: 1em;
 }
 @-webkit-keyframes glow{
   0% {
@@ -90,7 +107,6 @@ section{
   content: '';
   clear: both;
 }
-
 .content {
   box-sizing: border-box;
   padding: 1rem;
@@ -171,7 +187,8 @@ section{
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   height: .5rem;
-  border-color: #009688;
+  // border-color: #009688;
+  border-color: #1c1c1c;
   border-top-style: none;
   border-right-style: none;
 }
@@ -245,7 +262,7 @@ ul{
   width: 28%;
 }
 .very_big_wrapper{
-  width: 75%;
+  width: 95%;
   display: block;
   margin: -2em auto 0 auto;
   transform: translateX(0%);
@@ -288,30 +305,9 @@ pre{
 .parameter{
   color: #a151d2;
 }
-.row{
-  width: 100%;
-  padding: 2em 0;
-}
-.row:after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.col{
-  width: 50%;
-  padding:0 0.5em;
-  box-sizing: border-box;
-  float: left;
-}
-.explantion_div{
-  margin: 1em 0px 1em;
-  background-color: #ccc;
-  display: inline-block;
-  padding: 0 0.5em;
-}
-.explantion_div .title{
-  font-size: 1.1em;
-  font-family: helvetica;
+
+.hidden{
+  display: none;
 }
 
 .margin-top-zero{
@@ -321,10 +317,9 @@ pre{
 #uses .anchor_div{
   margin: 0.5em;
 }
+
 #uses a{
   font-size: 0.9em;
-  color: #666;
-  text-decoration: none;
 }
 #uses a:hover{
   color: rgba(255, 255, 255, 0.9);
@@ -332,4 +327,14 @@ pre{
 }
 #uses a.active{
   color: rgba(255, 255, 255, 0.9);
+}
+.light_gray{
+  color: #999;
+}
+.gray{
+  color: #666;
+}
+.note{
+  color: #4a4a4a;
+  font-weight: bold;
 }
