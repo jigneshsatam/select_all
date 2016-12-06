@@ -13,9 +13,20 @@
     <link rel="stylesheet" type="text/css" href="style.css.scss">
   </head>
   <body>
-    <nav>
-      <div id="uses" class="center_align">
-        <h3>Functionalies</h3>
+    <header id="project_title_div">
+      <div id="project_title">Checkbox select all</div>
+      <div id="project_tagline">Simple select and unselect all check-boxes</div>
+    </header>
+    <nav class="center_align">
+      <div id="uses">
+        <h3>Homepage</h3>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all">
+            Checkbox select all
+          </a>
+        </div>
+      <div id="uses">
+        <h3>Functionalities</h3>
         <div class="anchor_div">
           <a href="#basic_usage">
             Basic Usage
@@ -36,11 +47,26 @@
             Show Selected Count
           </a>
         </div>
+      <div id="downloads">
+        <h3>Downloads</h3>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all/zipball/master">
+            Download .zip
+          </a>
+        </div>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all/tarball/master">
+            Download tar.gz
+          </a>
+        </div>
+      </div>
     </nav>
     <main>
       <section class="ex1" id="basic_usage">
         <header class="header">
-          <p class="header_title margin-top-zero">Basic Usage</p>
+          <p class="header_title margin-top-zero">
+            Basic Usage
+          </p>
         </header>
         <div class="wrapper">
           <div class="content glow content1">
@@ -116,7 +142,7 @@
           <div class="header_title">Multiple Selection</div>
           <div class='center_align light_gray'>More than One Select All in a Page</div>
         </header>
-        <div class="wrapper">
+        <div class="wrapper big_wrapper">
           <div class="content glow content2">
             <ul class="list">
               <li class="list__item">
@@ -253,7 +279,7 @@
           <div class="header_title">Ajax Added Checkboxes</div>
           <div class='center_align light_gray'>Infinite Scroll with Select All</div>
         </header>
-        <div class="wrapper big_wrapper">
+        <div class="wrapper mid_wrapper">
           <div class="content glow content1">
             <ul class="list">
               <li class="list__item">
@@ -634,6 +660,15 @@
       togglable_data = $(this).data("toggler")
       $("[data-togglable="+togglable_data+"]").toggle("slow");
     });
+    $(window).scroll(function(){
+      if($(window).scrollTop() > $("#project_title_div").height()){
+        $('nav').css('top', 0).css('position', "fixed")
+      }
+      else{
+        $('nav').css('top', $("#project_title_div").height()).css('position', "initial")
+      }
+      console.log($('nav').css('position'))
+    })
     </script>
   </body>
 </html>

@@ -2,6 +2,10 @@
   font-family: jennaSue;
   src: url("JennaSue.ttf");
 }
+@font-face {
+  font-family: allema;
+  src: url("Allema.ttf");
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -20,7 +24,7 @@ nav{
   width: 20%;
   background-color: #1c1c1c;
   height: 100%;
-  position: fixed;
+  position: initial;
 }
 main{
   /*position: absolute;*/
@@ -64,7 +68,7 @@ a:hover{
 .title {
   text-align: center;
   font-size: 1.6em;
-  font-family: jennaSue;
+  font-family: allema;
 }
 .usage{
   font-size: 1.1em;
@@ -257,9 +261,11 @@ ul{
   padding-left: 2%;
   padding-right: 2%;
 }
-
-.big_wrapper{
+.mid_wrapper{
   width: 28%;
+}
+.big_wrapper{
+  width: 50%;
 }
 .very_big_wrapper{
   width: 95%;
@@ -283,6 +289,9 @@ pre{
   word-wrap: normal;
   color: #333;
   text-align: center;
+  width: 57vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tag{
   color: #2f6f9f;
@@ -318,12 +327,18 @@ pre{
   margin: 0.5em;
 }
 
-#uses a{
+nav a{
   font-size: 0.9em;
 }
-#uses a:hover{
+nav a:hover{
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
+}
+nav h3{
+  font-size: 1.3em;
+  font-family: allema;
+  font-weight: normal;
+  color: white;
 }
 #uses a.active{
   color: rgba(255, 255, 255, 0.9);
@@ -338,3 +353,21 @@ pre{
   color: #4a4a4a;
   font-weight: bold;
 }
+#project_title_div{
+  padding: 1.5%;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-shadow: #111 0px 0px 10px;
+}
+#project_title{
+  font-size: 2em;
+}
+#project_tagline {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  background: none;
+  text-shadow: #111 0px 0px 10px;
+}
+
