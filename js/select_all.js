@@ -45,6 +45,9 @@ if (typeof jQuery === "undefined") {
             if(elem.prop("checked")){
               total_selectables.prop('checked', true)
             }
+            if(elem.data("show_count")){
+              set_count(elem, total_selectables.parent().find(":checked").length, total_selectables.length);
+            }
           }
         });
       });
@@ -107,8 +110,8 @@ if (typeof jQuery === "undefined") {
       });
     }
     function initialise_select_all(select_all){
-      var selectables = $(".selectable."+settings.class);
       select_all.change(function(){
+        var selectables = $(".selectable."+settings.class);
         var isChecked = $(this).prop("checked");
         selectables.prop('checked', isChecked);
         if(select_all.data("show_count").length > 0){
