@@ -17,7 +17,7 @@ describe("Select All", function() {
     });
 
     afterEach(function(){
-      $(document.body).text("");
+      $(document.body).empty();
     });
 
     it("adds class select_all on applied checkbox", function() {
