@@ -13,6 +13,10 @@ if (typeof jQuery === "undefined") {
       uniq_id: Math.random()
     }, options );
 
+    if($(this).length == 0){
+      return null;
+    }
+
     var select_all = $(this);
     var find_in = select_all;
 
