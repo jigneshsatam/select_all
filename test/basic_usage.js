@@ -55,7 +55,7 @@ describe("select_all-rails: Basic Usage", function() {
       expect($("#parent_checkbox").is(":checked")).to.equal(true);
     });
 
-    it("should do nothing, if element is undefined", function() {
+    it("should do return null, if element is undefined.", function() {
       expect($("#undefined_element").select_all()).to.equal(null);
     });
   });
