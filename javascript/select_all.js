@@ -13,7 +13,7 @@ if (typeof jQuery === "undefined") {
       uniq_id: Math.random()
     }, options );
 
-    if($(this).length == 0){
+    if($(this).length === 0){
       return null;
     }
 
@@ -91,7 +91,7 @@ if (typeof jQuery === "undefined") {
           count_result = "(Selected "+selected_options_count+")";
       }
       var attach_count_to = $(parent_select_all.data("attach_count_to"));
-      if (attach_count_to.length == 0)
+      if (attach_count_to.length === 0)
         attach_count_to = parent_select_all.parent();
       if ($("span#select_all_count_id[data-select_all_uid='"+parent_select_all.data("select_all_uid")+"']").length > 0)
         $("span#select_all_count_id[data-select_all_uid='"+parent_select_all.data("select_all_uid")+"']").text(count_result);
@@ -103,7 +103,7 @@ if (typeof jQuery === "undefined") {
         var parent_select_all = $(".select_all[data-select_all_class='"+settings.class+"']");
         var selected_options_count = $(".selectable."+settings.class+":checked").length;
         var total_options_count = $(".selectable."+settings.class).length;
-        if (selected_options_count == total_options_count)
+        if (selected_options_count === total_options_count)
           parent_select_all.prop('checked', "checked");
         else
           parent_select_all.prop('checked', false);
