@@ -3,7 +3,7 @@
 
 ***Less file size and simple implementation***
 ***
- [![Build Status](https://travis-ci.org/JigneshSatam/checkbox_select_all.svg?branch=master)](https://travis-ci.org/JigneshSatam/checkbox_select_all) [![Code Climate](https://codeclimate.com/github/JigneshSatam/checkbox_select_all/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/checkbox_select_all) [![Issue Count](https://codeclimate.com/github/JigneshSatam/checkbox_select_all/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/checkbox_select_all)
+[![GitHub version](https://badge.fury.io/gh/jigneshsatam%2Fcheckbox_select_all@2x.png)](https://badge.fury.io/gh/jigneshsatam%2Fcheckbox_select_all) [![Build Status](https://travis-ci.org/JigneshSatam/checkbox_select_all.svg?branch=master)](https://travis-ci.org/JigneshSatam/checkbox_select_all) [![Code Climate](https://codeclimate.com/github/JigneshSatam/checkbox_select_all/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/checkbox_select_all) [![Issue Count](https://codeclimate.com/github/JigneshSatam/checkbox_select_all/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/checkbox_select_all)
 
 **checkbox_select_all** is *jQuery* dependent *javascript* for implementing '**select-all**' functionality in more simple and effective way in your application.
 ## Functionalities
